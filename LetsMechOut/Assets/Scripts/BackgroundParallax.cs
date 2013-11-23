@@ -49,3 +49,6 @@ public class BackgroundParallax : MonoBehaviour
 		previousCamPos = cam.position;
 	}
 }
+
+
+ihaveasmellybutt.jpg
