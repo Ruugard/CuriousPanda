@@ -7,7 +7,7 @@ PhysicsManager:
   m_DefaultMaterial: {fileID: 0}
   m_BounceThreshold: 2
   m_SleepVelocity: .150000006
-  m_SleepAngularVelocity: .140000001
+  m_SleepAngularVelocity: 1.13999999
   m_MaxAngularVelocity: 7
   m_MinPenetrationForPenalty: .00999999978
   m_SolverIterationCount: 6

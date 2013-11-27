@@ -59,6 +59,10 @@ TagManager:
     userID: 2
     uniqueID: 1535931219
     locked: 0
+  - name: Mech
+    userID: 6
+    uniqueID: 1286233945
+    locked: 0
   - name: Foreground
     userID: 3
     uniqueID: 1024582385

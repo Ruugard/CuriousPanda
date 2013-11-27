@@ -9,9 +9,9 @@ public class PlayerControl : MonoBehaviour
 	public bool jump = false;				// Condition for whether the player should jump.
 
 
-	public float moveForce = 365f;			// Amount of force added to move the player left and right.
-	public float maxSpeed = 5f;				// The fastest the player can travel in the x axis.
-	public float jumpForce = 500;			// Amount of force added when the player jumps.
+	public float moveForce = 5f;			// Amount of force added to move the player left and right.
+	public float maxSpeed = 1f;				// The fastest the player can travel in the x axis.
+	public float jumpForce = 50;			// Amount of force added when the player jumps.
 
 
 	private Transform groundCheck;			// A position marking where to check if the player is grounded.
@@ -29,6 +29,8 @@ public class PlayerControl : MonoBehaviour
 		wallClimbCheck = transform.Find("climbWallCheck");
 		mRoofClimbCheck = transform.Find("climbRoofCheck");
 		anim = GetComponent<Animator>();
+
+		Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Climbable"), LayerMask.NameToLayer("Player"));
 	}
 
 
@@ -78,6 +80,22 @@ public class PlayerControl : MonoBehaviour
 		rigidbody2D.gravityScale = 1;
 	}
 
+	private bool _AttemptToWallClimb()
+	{
+		if (Physics2D.Linecast(transform.position, wallClimbCheck.position, 1 << LayerMask.NameToLayer("Climbable")))
+		{
+			mIsRoofClimbing = false;
+			mIsClimbing = true;
+			rigidbody2D.velocity = Vector2.zero;
+			rigidbody2D.gravityScale = 0;
+			anim.SetBool("Climb", true);
+			anim.SetBool("RoofClimb", false);
+			return true;
+		}
+
+		return false;
+	}
+	
 	void FixedUpdate ()
 	{
 		// Cache the horizontal input.
@@ -110,15 +128,7 @@ public class PlayerControl : MonoBehaviour
 			}
             else if (Mathf.Abs(v) > 0.5f && mIsRoofClimbing)
             {
-                if (Physics2D.Linecast(transform.position, wallClimbCheck.position, 1 << LayerMask.NameToLayer("Climbable")))
-                {
-                    mIsRoofClimbing = false;
-                    mIsClimbing = true;
-                    rigidbody2D.velocity = Vector2.zero;
-                    rigidbody2D.gravityScale = 0;
-                    anim.SetBool("Climb", true);
-                    anim.SetBool("RoofClimb", false);
-                }
+				_AttemptToWallClimb();
             }
 
             if (mIsClimbing)
@@ -131,7 +141,7 @@ public class PlayerControl : MonoBehaviour
                 {
                     if (v * rigidbody2D.velocity.y < maxSpeed)
                         // ... add a force to the player.
-                        rigidbody2D.AddForce(Vector2.up * v * moveForce);
+                        rigidbody2D.AddForce(Vector2.up * v * moveForce * 0.5f);
 
                     // If the player's horizontal velocity is greater than the maxSpeed...
                     if (Mathf.Abs(rigidbody2D.velocity.y) > maxSpeed)
@@ -147,7 +157,10 @@ public class PlayerControl : MonoBehaviour
 			{
 				if (Physics2D.Linecast(transform.position, mRoofClimbCheck.position, 1 << LayerMask.NameToLayer("Climbable")) == false)
 				{
-					_EnableGravityAndFall();
+					if(_AttemptToWallClimb() == false)
+					{
+						_EnableGravityAndFall();
+					}
 				}
 			}
 		}

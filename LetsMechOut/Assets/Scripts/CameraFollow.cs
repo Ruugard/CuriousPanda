@@ -52,8 +52,8 @@ public class CameraFollow : MonoBehaviour
 
 	private bool zoomedIn = false;
 	private float zoomLevel;
-	private float maxZoom = 5;
-	private float minZoom = 10;
+	private float maxZoom = 1.5f;
+	private float minZoom = 3;
 	void UpdateZoomLevel()
 	{
 		if(zoomedIn)

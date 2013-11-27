@@ -1,7 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{F47C7621-78E1-F043-3736-E3D936DAF6F9}") = "Lets Mech Out", "Assembly-CSharp.csproj", "{D1DD62F6-9148-AAFA-1C24-ADABBB6E48B3}"
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{5F3E1725-2200-D5F4-66DE-ACFBCBFD01E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,15 +8,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D1DD62F6-9148-AAFA-1C24-ADABBB6E48B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1DD62F6-9148-AAFA-1C24-ADABBB6E48B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1DD62F6-9148-AAFA-1C24-ADABBB6E48B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1DD62F6-9148-AAFA-1C24-ADABBB6E48B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F3E1725-2200-D5F4-66DE-ACFBCBFD01E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F3E1725-2200-D5F4-66DE-ACFBCBFD01E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F3E1725-2200-D5F4-66DE-ACFBCBFD01E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F3E1725-2200-D5F4-66DE-ACFBCBFD01E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																									GlobalSection(MonoDevelopProperties) = preSolution
+	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
@@ -35,5 +34,4 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
-
 EndGlobal
