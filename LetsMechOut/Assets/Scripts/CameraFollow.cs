@@ -11,14 +11,11 @@ public class CameraFollow : MonoBehaviour
 	public Vector2 maxXAndY;		// The maximum x and y coordinates the camera can have.
 	public Vector2 minXAndY;		// The minimum x and y coordinates the camera can have.
 
-	private Transform player;		// Reference to the player's transform.
+	public Transform player;		// Reference to the player's transform.
 	private float zoomScale = 1;
 
 	void Awake ()
 	{
-		// Setting up the reference.
-		GameObject obj = GameObject.FindGameObjectWithTag("Player");
-		player = obj.transform;
 	}
 
 
@@ -37,23 +34,29 @@ public class CameraFollow : MonoBehaviour
 
 	void Update()
 	{
-		if(Input.GetMouseButtonDown(0))
-	    {
-			zoomedIn = !zoomedIn;
+		if(player != null)
+		{
+			if(Input.GetMouseButtonDown(0))
+		    {
+				zoomedIn = !zoomedIn;
+			}
 		}
 	}
 
 
 	void FixedUpdate ()
 	{
-		TrackPlayer();
-		UpdateZoomLevel();
+		if(player != null)
+		{
+			TrackPlayer();
+			UpdateZoomLevel();
+		}
 	}
 
 	private bool zoomedIn = false;
 	private float zoomLevel;
-	private float maxZoom = 1.5f;
-	private float minZoom = 3;
+	private float maxZoom = 1.75f;
+	private float minZoom = 6f;
 	void UpdateZoomLevel()
 	{
 		if(zoomedIn)

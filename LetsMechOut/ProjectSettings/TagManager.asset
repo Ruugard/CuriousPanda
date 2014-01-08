@@ -13,6 +13,11 @@ TagManager:
   - ExplosionFX
   - HealthBar
   - Climbable
+  - Fallthroughable
+  - Elevator
+  - SpawnPoint
+  - GlobalManagers
+  - Mech
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

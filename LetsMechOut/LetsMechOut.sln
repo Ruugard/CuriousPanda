@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{2BD068E7-8E10-59FE-FFB6-242FEA2C4F84}") = "LetsMechOut", "Assembly-CSharp.csproj", "{5F3E1725-2200-D5F4-66DE-ACFBCBFD01E9}"
 EndProject
+Project("{2BD068E7-8E10-59FE-FFB6-242FEA2C4F84}") = "LetsMechOut", "Assembly-CSharp-Editor.csproj", "{5D29309E-92EB-F1C8-2746-068BC2F386DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +15,15 @@ Global
 		{5F3E1725-2200-D5F4-66DE-ACFBCBFD01E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F3E1725-2200-D5F4-66DE-ACFBCBFD01E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F3E1725-2200-D5F4-66DE-ACFBCBFD01E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D29309E-92EB-F1C8-2746-068BC2F386DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D29309E-92EB-F1C8-2746-068BC2F386DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D29309E-92EB-F1C8-2746-068BC2F386DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D29309E-92EB-F1C8-2746-068BC2F386DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-														GlobalSection(MonoDevelopProperties) = preSolution
+																																														GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
